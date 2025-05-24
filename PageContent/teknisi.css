@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root{
+    /* ============== Warna Background =================*/
+    --title-color: #000;
+    --text-color: #000;
+    --text-color-light: #ffffff;
+    --container-color: #ffffff;
+    --video-container-color: #545454;
+    --container-color-alt: #4D0018;
+    --body-color: #4D0018;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    text-transform: capitalize;
+    font-family: 'Nunito', sans-serif;
+    transition: all .5s;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--body-color);
+}
+
+header{
+    width: 100%;
+    max-width: 100%;
+    padding-left: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    background-color: var(--body-color);
+    box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.5);
+}
+
+header nav a{
+    color: var(--text-color-light);
+    margin-right: 5px;
+    padding: 5px 5px;
+    font-size: 16px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+a.active{
+    background: var(--text-color-light);
+    color: var(--body-color);
+    padding: 10px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+a:hover{
+    background: var(--text-color-light);
+    color: var(--body-color);
+    padding: 10px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem 7%;
+    margin-top: 3rem;
+}
+
+.container .video-container {
+    background-color: var(--container-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.container .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.container .video-container .caption {
+    color: var(--body-color);
+    font-size: 2.2rem;
+    padding: 1.5rem 0rem;
+}
+
+
+.container .video-list {
+    background-color: var(--container-color);
+    border-radius: 0.5rem;
+    height: 67.5%;
+    overflow-y: scroll;
+}
+
+.container .video-list .video video {
+    width: 10rem;
+    border-radius: 0.5rem;
+}
+
+.container .video-list .video {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #e8e8e8;
+    cursor: pointer;
+    border: .1rem solid rgba(0, 0, 0, .1);
+}
+
+.container .video-list .video.active{
+    background-color: #4D0018;
+}
+
+.container .video-list .video.active .caption{
+    color: #ffffff;
+}
+
+.container .video-list .video .caption{
+    font-size: 1.7rem;
+}
+
+.container .video-list .video .deskripsi{
+    display: none;
+}
+
+@media (max-width: 999px) {
+    header{
+        padding-left: 50px;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px){
+    header{
+        padding-left: 20px;
+    }
+    
+    header a{
+        font-size: 14px;
+        margin-left: 0px;
+    }
+}
+
+/* ================================================== Button Theme Dark/Light ======================================*/
+.change-theme{
+    position: absolute;
+    right: 30px;
+    top: 1.5rem;
+    display: flex;
+    color: var(--text-color-light);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ============================================== Variable Dark Mode ================================================*/
+body.dark-theme{
+    --title-color: #0b0b0b;
+    --text-color: #4D0018;
+    --text-color-light: #4D0018;
+    --container-color: #e8e8e8;
+    --container-color-alt: #f0efef;
+    --body-color: #fcfcfc;
+    transition: .5s;
+}

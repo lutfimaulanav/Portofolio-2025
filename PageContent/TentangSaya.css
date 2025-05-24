@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/*Untuk Deklarasi Warna Agar Tidak Menulis Kode*/
+:root {
+    --header-height: 3rem;
+
+    /* ============== Warna Background =================*/
+    --title-color: #fff;
+    --text-color: #fff;
+    --text-color-light: #545454;
+    --container-color: #540017;
+    --container-color-alt: #4D0018;
+    --body-color: #4D0018;
+
+    /* ============== Tipe Dan Ukuran Font =================*/
+    --body-font: 'Nunito', sans-serif;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+
+    /* ============== Ketebalan Font =================*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /* ============== Margin =================*/
+    --mb-1: .5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+
+    /* ============== Index =================*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/* ======================= Base CSS ========================*/
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============== Setingan Print A4 =================*/
+body {
+    margin: 0 0 var(--header-height);
+    padding: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: .5s;
+}
+
+h1,
+h2,
+h3,
+ul,
+p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============== Class CSS =================*/
+.section {
+    padding: 1.5rem 0;
+}
+
+.section-title {
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    text-transform: uppercase;
+    letter-spacing: .35rem;
+    text-align: center;
+    margin-bottom: var(--mb-3);
+}
+
+/* ================ Layout ================= */
+.bd-container {
+    max-width: 968px;
+    width: calc(100% - 3rem);
+    margin-left: var(--mb-3);
+    margin-right: var(--mb-3);
+}
+
+.bd-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.header-1 {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background: var(--body-color);
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+/* ====================== Navigation ==================== */
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 968px) {
+    .nav__menu {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        padding: 2rem 1.5rem;
+        background-color: var(--body-color);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+        border-radius: 1rem 1rem 0 0;
+        z-index: var(--z-fixed);
+        transition: .3s;
+    }
+}
+
+.nav__logo,
+.nav__toggle {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+.nav__toggle {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.nav__item {
+    text-align: center;
+}
+
+.nav__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.nav__link{
+    display: flex;
+    flex-direction: column;
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+    font-weight: var(--font-medium);
+}
+
+.nav__link:hover{
+    color: var(--title-color);
+}
+
+.nav__icon{
+    font-size: 1.2rem;
+    margin-bottom: var(--mb-1);
+
+}
+
+/* ======================= Show Menu ==================== */
+.show-menu{
+    bottom: var(--header-height);
+}
+
+/* ====================== Active Link ==================== */
+.active-link{
+    color: var(--title-color);
+}
+
+/* ==================================== Beranda =====================================*/
+.beranda{
+    position: relative;
+}
+
+.beranda__konten{
+    gap: 2.5rem;
+}
+
+.beranda__data{
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.beranda__img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    justify-self: center;
+    margin-bottom: var(--mb-1);
+}
+
+.beranda__judul{
+    font-size: var(--h1-font-size);
+}
+
+.beranda__profession{
+    font-size: var(--normal-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.beranda__alamat{
+    gap: 1rem;
+}
+
+.beranda__informasi{
+    display: flex;
+    align-items: center;
+    font-size: var(--small-font-size);
+}
+
+.icon__beranda{
+    font-size: 1.5rem;
+    margin-right: .75rem;
+}
+
+.beranda__cv-tombol{
+    display: inline-block;
+    border: 2px solid var(--text-color);
+    color: var(--title-color);
+    padding: 1rem 2rem;
+    border-radius: .25rem;
+    transition: .3s;
+    font-weight: var(--font-medium);
+}
+
+.beranda__cv-tombol:hover{
+    background-color: var(--text-color);
+    color: var(--container-color);
+}
+
+/* =========================== Sosial Media CSS =================================*/
+.sosmed__container{
+    grid-template-columns: max-content;
+    gap: 1rem;
+}
+
+.social__link{
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+}
+
+.social__link:hover{
+    color: var(--title-color);
+}
+
+.social__icon{
+    font-size: 1.5rem;
+    margin-right: .75rem;
+}
+
+/* ====================================== Profile ==========================*/
+.profile__description{
+    text-align: justify;
+}
+
+/* ==================================== Riwayat Pendidikan =========================== */
+.education__content{
+    display: flex;
+}
+
+.education__time{
+    padding-right: 1rem;
+}
+
+.education__rounder{
+    position: relative;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    margin-top: .25rem;
+}
+
+.education__line{
+    display: block;
+    width: 2px;
+    height: 120%;
+    background-color: var(--text-color);
+    transform: translate(4px, 0);
+}
+
+.education__data{
+    gap: .25rem;
+}
+
+.education__title{
+    font-size: var(--h3-font-size);
+}
+
+.education__studies{
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+}
+
+.education__year{
+    font-size: var(--smaller-font-size);
+}
+
+/* ============================= Kemampuan CSS ================================ */
+
+.skills__data{
+    padding-left: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media screen and (max-width: 968px) {
+    .skills__data{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+.skills__data{
+    gap: .5rem;
+}
+
+.logo__skills{
+    margin-right: .75rem;
+    font-size: 50px;
+}
+
+
+.skills__name{
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--mb-3);
+    padding: 1rem 2rem;
+    justify-content: center;
+    border-radius: .5rem;
+    font-size: 20px;
+    margin-right: 1rem;
+    border: 2px solid var(--text-color);
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+.skills__name:hover{
+    background-color: var(--text-color);
+    color: var(--body-color);
+    transition: .5s;
+}
+
+/* ======================================= Pengalaman CSS ==================================== */
+.experience__content{
+    display: flex;
+}
+
+.experience__time{
+    padding-right: 1rem;
+}
+
+.experience__rounder{
+    position: relative;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    margin-top: .25rem;
+}
+
+.experience__line{
+    display: block;
+    width: 2px;
+    height: 110%;
+    background-color: var(--text-color);
+    transform: translate(4px, 0);
+}
+
+.experience__data{
+    gap: .5rem;
+}
+
+.experience__title{
+    font-size: var(--h3-font-size);
+}
+
+.experience__company{
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+}
+
+.experience__description{
+    text-align: justify;
+}
+
+/* ================================================ Sertifikat ================================================= */
+.certificate__title{
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.preview_certificate{
+    background-color: var(--text-color);
+    color: var(--body-color);
+    padding: .25rem;
+    border-radius: .25rem;
+}
+
+.preview_certificate:hover{
+    background-color: var(--text-color-light);
+    color: var(--text-color);
+    transition: .5s;
+}
+
+/* =============================================== Kemampuan Bahasa =============================================== */
+.languages__content{
+    grid-template-columns: repeat(2,1fr);
+}
+
+.languages__content{
+    gap: 0;
+}
+
+.languages__name{
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--mb-3);
+    padding: .75rem;
+    margin-right: .75rem;
+    border: 2px solid var(--text-color);
+    color: var(--title-color);
+    cursor: pointer;
+    justify-content: center;
+    border-radius: .25rem;
+}
+
+.languages__name:hover {
+    background-color: var(--text-color);
+    color: var(--body-color);
+    transition: .5s;
+}
+
+/* ==================================================== Hobby ==================================================== */
+.interest__container {
+    grid-template-columns: repeat(3,1fr);
+    margin-top: var(--mb-2);
+}
+
+.interest__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.interest__icon{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: .25rem;
+}
+
+/* ================================================== Scroll Top Icon ============================================== */
+.scrolltop{
+    position: fixed;
+    right: 1rem;
+    bottom: -20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .3rem;
+    background-color: var(--container-color-alt);
+    border-radius: .4rem;
+    z-index: var(--z-tooltip);
+    transition: .4s;
+    box-shadow: 8px 5px 3px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+}
+
+.scrolltop__icon{
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.show-scroll{
+    visibility: visible;
+    bottom: 5rem;
+}
+
+/* ================================================ @ Media Queries ================================================ */
+
+/* ======================== Resolution Small Potrait 320px ===================================== */
+@media screen and (max-width: 320px) {
+    .nav__list{
+        grid-template-columns: repeat(2,1fr);
+        gap: 1rem .5rem;
+    }
+}
+
+/* ======================== Resolution Widscreen 968px ========================================= */
+@media screen and (min-width: 968px) {
+    body{
+        margin: 3rem 0;
+    }
+
+    .bd-container{
+        margin-left: auto;
+        margin-right: auto;    
+    }
+
+    .header-1,
+    .scrolltop{
+        display: none;
+    }
+
+    .resume{
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+        background-color: var(--container-color);
+        box-shadow: 0 0 25px rgba(13, 12, 12, .55);
+    }
+
+    .resume__left{
+        padding: 0 1rem;
+        background-color: var(--container-color-alt);
+    }
+
+    .resume__right{
+        padding: 0 2rem;
+    }
+
+    .section-title,
+    .profile__description {
+        text-align: initial;
+    }
+
+    .beranda__konten{
+        gap: 1.5rem;
+    }
+
+    .beranda__cv-tombol{
+        display: none;
+    }
+
+    .beranda__informasi{
+        text-align: justify;
+    }
+
+    .profile__description{
+        text-align: justify;
+    }
+
+    .skills__data{
+        margin-left: -15px;
+        grid-template-columns: repeat(1,1fr)
+    }
+
+    .skills__name{
+        font-size: 15px;
+        padding: .5rem;
+    }
+
+    .logo__skills{
+        font-size: 15px;
+    }
+}
+
+/* ================================================== Button Theme Dark/Light ======================================*/
+.change-theme{
+    position: absolute;
+    right: 0;
+    top: 2.2rem;
+    display: flex;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.change-theme:hover{
+    color: var(--title-color);
+}
+
+/* ============================================== Variable Dark Mode ================================================*/
+body.dark-theme{
+    --title-color: #0b0b0b;
+    --text-color: #403a3a;
+    --text-color-light: #707070;
+    --container-color: #fafafa;
+    --container-color-alt: #f0efef;
+    --body-color: #fcfcfc;
+    transition: .5s;
+}
